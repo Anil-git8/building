@@ -1,0 +1,64 @@
+<!-- navbar.component.html -->
+<div class="navbar-wrapper">
+<nav class="navbar navbar-expand-lg navbar-light bg-white ">
+    <div class="container-fluid">
+      <img class="main" routerLink="/Home" src="assets/images/logo.png" width="8%" height="7%" alt="Folk-logo">
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Activity
+            </a>
+            <ul class="dropdown-menu shadow border-0" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item" routerLink="/main-app">AOMC</a></li>
+              <li><a class="dropdown-item" routerLink="/budiling">GFY</a></li>
+              <li><a class="dropdown-item" routerLink="/aduit">FOLK</a></li>
+            </ul>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  routerLink="/main-app" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu shadow border-0" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" routerLink="/about-us">About Us</a></li>
+              <li><a class="dropdown-item" routerLink="/partner-model">Partner Model Explained</a></li>
+              <li><a class="dropdown-item" routerLink="/people">People</a></li>
+              <li><a class="dropdown-item" routerLink="/careers">Careers</a></li>
+            </ul>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="workDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Work
+            </a>
+            <ul class="dropdown-menu shadow border-0" aria-labelledby="workDropdown">
+              <li><a class="dropdown-item" routerLink="/work1">Work 1</a></li>
+              <li><a class="dropdown-item" routerLink="/work2">Work 2</a></li>
+            </ul>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/thoughts">Thoughts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/partner-club">Partner Club</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+  
