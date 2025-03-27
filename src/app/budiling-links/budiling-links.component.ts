@@ -8,11 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './budiling-links.component.css'
 })
 export class BudilingLinksComponent {
-  handle(){
-   console.log("New folk website")
-   alert("Now you in building")
-
-  }
+ 
 
   constructor(private router: Router) {}
 

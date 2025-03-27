@@ -89,6 +89,32 @@ p {
 div#ez-toc-container {
     margin-top: 30px;
 }
+/* .container {
+    padding-left: 15px !important;
+}
+.col-12.col-md-6 {
+    padding-left: 15px !important;
+}
+.home-image-with-text-right {
+    margin-left: 15px !important;
+    padding-left: 15px !important;
+}
+.col-md-6 {
+    margin-left: 15px !important;
+    padding-left: 15px !important;
+}
+.col-md-6 {
+    margin-left: 15px !important;
+    padding-left: 15px !important;
+}
+.container {
+    padding-left: 15px !important;
+    margin-left: 15px !important;
+} */
+
+
+
+
 
 .customLinkedin {
     background: none !important;
@@ -115,8 +141,8 @@ body.single .wp-caption {
 
 body.single .affix {
     position: sticky;
-    margin-top: 40px;
-    top: 120px;
+   
+    
 }
 
 @media (min-width: 991px) and (max-width:1199px) {
@@ -768,7 +794,7 @@ body.page-id-6517 .hero-section__blob-5+.container>.row+.row {
     width: 40%;
 }
 
-/*.home_logo_img:after {
+/* /*.home_logo_img:after {
 content: '';
 border-bottom: 5px solid white;
 position: absolute;
@@ -777,7 +803,7 @@ top: 12px;
 height: 5px;
 width: 1000px;
 background: #fff;
-}
+} 
 
 .home_logo_img:before {
 content: '';
@@ -1819,3 +1845,60 @@ margin-left: 0; /* Reset left margin */
 margin-right: 0; /* Reset right margin */
 }
 }
+
+body{
+    margin-top:-10%;
+}
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.offer-item {
+    background: #fff;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.offer-item:hover {
+    transform: scale(1.05);
+}
+
+.offer-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.offer-item h3 {
+    font-size: 20px;
+    color: #222;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.offer-item p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .image-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
