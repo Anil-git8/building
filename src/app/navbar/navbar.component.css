@@ -86,3 +86,66 @@
 .navbar-nav .dropdown-item:hover {
     background-color: #5757ff;
 }
+/* Underline Animation on Hover */
+.navbar-nav .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Scale Effect on Hover */
+.navbar-nav .nav-link:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Glow Effect on Dropdown Items */
+.navbar-nav .dropdown-item {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #5757ff;
+    box-shadow: 0px 0px 10px rgba(87, 87, 255, 0.7);
+}
+/* Remove Bootstrap's default arrow */
+.navbar-nav .dropdown-toggle::after {
+    display: none; /* Hide the default Bootstrap arrow */
+}
+
+/* Custom Arrow using Unicode (▼) */
+.navbar-nav .dropdown-toggle {
+    position: relative;
+    padding-right: 20px; /* Space for arrow */
+}
+
+.navbar-nav .dropdown-toggle::before {
+    content: "▼"; /* Unicode down arrow */
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px; /* Increase size */
+    transition: transform 0.3s ease;
+}
+
+/* Rotate Arrow on Hover */
+.navbar-nav .dropdown-toggle:hover::before {
+    transform: translateY(-50%) rotate(180deg); /* Flips when hovered */
+}
+
