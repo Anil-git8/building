@@ -1,14 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  standalone: false,
+  standalone: false, // Only needed if using standalone components
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
 
-  
+  constructor(public router: Router){}
   isScrolled: boolean = false;
 
   @HostListener('window:scroll', [])

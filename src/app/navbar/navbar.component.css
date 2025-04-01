@@ -8,6 +8,7 @@
     z-index: 1000; 
     background-color: transparent; /* Start as transparent */
     transition: background-color 0.5s ease-in; 
+    margin-left: 0;
 }
 
 /* Add white background when scrolled */
