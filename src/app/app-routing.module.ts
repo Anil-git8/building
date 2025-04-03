@@ -6,17 +6,28 @@ import { MainAppComponent } from './main-app/main-app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { FOLKstoreComponent } from './folkstore/folkstore.component';
+import { AshrayaComponent } from './ashraya/ashraya.component';
+import { RequestComponent } from './request/request.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/Home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'budiling', component: BudilingLinksComponent },
-  { path:'aduit',component: AduitComponent},
-  { path:'main-app',component:MainAppComponent},
-  { path: 'Home', component:HomeComponent},
-  { path:'contact',component:ContactComponent}
-
+  { path: 'aduit', component: AduitComponent },
+  { path: 'main-app', component: MainAppComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'folkstore', component: FOLKstoreComponent },
+  { path: 'ashraya', component: AshrayaComponent },
+  { path: 'request', component: RequestComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+ 
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

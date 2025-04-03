@@ -9,6 +9,14 @@ import { FooterComponent } from './footer/footer.component';
 import { MainAppComponent } from './main-app/main-app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { FOLKstoreComponent } from './folkstore/folkstore.component';
+import { AshrayaComponent } from './ashraya/ashraya.component';
+import { RequestComponent } from './request/request.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -21,12 +29,19 @@ import { ContactComponent } from './contact/contact.component';
     MainAppComponent,
     HomeComponent,
     ContactComponent,
-  
+    FOLKstoreComponent,
+    AshrayaComponent,
+    RequestComponent,
+    LoginComponent,
+    SignupComponent,
  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

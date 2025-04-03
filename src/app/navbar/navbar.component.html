@@ -1,64 +1,157 @@
-<!-- navbar.component.html -->
-<div class="navbar-wrapper">
-<nav class="navbar navbar-expand-lg navbar-light bg-white ">
+
+<div class="navbar-wrapper"*ngIf="router.url !== '/login' && router.url !== '/signup'"[ngClass]="{'scrolled': isScrolled}">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <img class="main" routerLink="/home" src="assets/images/logo.png" width="8%" height="8%" alt="Folk-logo">
     <div class="container-fluid">
-      <img class="main" routerLink="/Home" src="assets/images/logo.png" width="8%" height="7%" alt="Folk-logo">
-  
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-  
-      <div class="collapse navbar-collapse" id="navbarNav">
+
+      <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 40px;">
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">About&nbsp;Us</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               Activity
             </a>
             <ul class="dropdown-menu shadow border-0" aria-labelledby="servicesDropdown">
-              <li><a class="dropdown-item" routerLink="/main-app">AOMC</a></li>
-              <li><a class="dropdown-item" routerLink="/budiling">GFY</a></li>
+              <li><a class="dropdown-item" routerLink="/main-app">ART OF MIND CONTROL</a></li>
+              <li><a class="dropdown-item" routerLink="/budiling">GITA FOR YOUTH</a></li>
               <li><a class="dropdown-item" routerLink="/aduit">FOLK</a></li>
+              <li><a class="dropdown-item" routerLink="/aduit">Events & Trips</a></li>
+              <li><a class="dropdown-item" routerLink="/aduit">Live</a></li>
             </ul>
           </li>
-  
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  routerLink="/main-app" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              About
+              Clubs
             </a>
-            <ul class="dropdown-menu shadow border-0" aria-labelledby="aboutDropdown">
-              <li><a class="dropdown-item" routerLink="/about-us">About Us</a></li>
-              <li><a class="dropdown-item" routerLink="/partner-model">Partner Model Explained</a></li>
-              <li><a class="dropdown-item" routerLink="/people">People</a></li>
-              <li><a class="dropdown-item" routerLink="/careers">Careers</a></li>
+            <ul class="dropdown-menu shadow border-0" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item" >Kartal</a></li>
+              <li><a class="dropdown-item" >Debate</a></li>
+              <li><a class="dropdown-item" >Photography</a></li>
+              <li><a class="dropdown-item" >Mantra Meditation</a></li>
+              <li><a class="dropdown-item" >Kshatriya</a></li>
+              <li><a class="dropdown-item" >Krida</a></li>
             </ul>
           </li>
-  
+          <li class="nav-item">
+            <a class="nav-link">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">FOLK&nbsp;Residency</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">FOLK&nbsp;Store</a>
+          </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="workDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              Work
+              Request
             </a>
-            <ul class="dropdown-menu shadow border-0" aria-labelledby="workDropdown">
-              <li><a class="dropdown-item" routerLink="/work1">Work 1</a></li>
-              <li><a class="dropdown-item" routerLink="/work2">Work 2</a></li>
+            <ul class="dropdown-menu shadow border-0" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item" routerLink="/main-app">Narsimha Homa</a></li>
+              <li><a class="dropdown-item" routerLink="/budiling">Nagar Sankirthan</a></li>
+              <li><a class="dropdown-item" routerLink="/aduit">Japa Yagna</a></li>
             </ul>
           </li>
-  
           <li class="nav-item">
-            <a class="nav-link" routerLink="/thoughts">Thoughts</a>
+            <a class="nav-link">Ashraya</a>
+          </li>
+          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <a class="nav-link">Donate</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/partner-club">Partner Club</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/contact">Contact</a>
+            <a class="nav-link btn" routerLink="/login" style="border-radius: 20px;">Login</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </div>
-  
+
+
+<!-- <div class="navbar-wrapper" [ngClass]="{'scrolled': isScrolled}">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <img class="main" routerLink="/Home" src="assets/images/logo.png" width="8%" height="8%" alt="Folk-logo" >
+    <div class="container-fluid" >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 40px;">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" >About&nbsp;Us</a>
+          </li>
+            <li class="nav-item dropdown">
+              
+              <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Activity
+              </a>
+              <ul class="dropdown-menu shadow border-0" aria-labelledby="servicesDropdown">
+                <li><a class="dropdown-item" routerLink="/main-app" >ART OF MIND CONTROL</a></li>
+                <li><a class="dropdown-item" routerLink="/budiling">GITA FOR YOUTH</a></li>
+                <li><a class="dropdown-item" routerLink="/aduit">FOLK</a></li>
+                <li><a class="dropdown-item" routerLink="/aduit">Events & Trips</a></li> 
+                <li><a class="dropdown-item" routerLink="/aduit">Live</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              
+              <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Clubs
+              </a>
+              <ul class="dropdown-menu shadow border-0" aria-labelledby="servicesDropdown">
+                <li><a class="dropdown-item" routerLink="/main-app" >Kartal</a></li>
+                <li><a class="dropdown-item" routerLink="/budiling">Debate</a></li>
+                <li><a class="dropdown-item" routerLink="/aduit">Photography</a></li>
+                <li><a class="dropdown-item" routerLink="/aduit">Mantra Meditation</a></li> 
+                <li><a class="dropdown-item" routerLink="/aduit">Kshatriya</a></li>
+                <li><a class="dropdown-item" routerLink="/aduit">Krida</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" >Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" >FOLK&nbsp;Residency</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" >FOLK&nbsp;Store</a>
+            </li>
+            <li class="nav-item dropdown">
+              
+              <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Request
+              </a>
+              <ul class="dropdown-menu shadow border-0" aria-labelledby="servicesDropdown">
+                <li><a class="dropdown-item" routerLink="/main-app" >Narsimha Homa</a></li>
+                <li><a class="dropdown-item" routerLink="/budiling">Nagar Sankirthan</a></li>
+                <li><a class="dropdown-item" routerLink="/aduit">Japa Yagna</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" >Ashraya</a>
+            </li>
+    
+            <li class="nav-item dropdown">
+            <li class="nav-item">
+              <a class="nav-link" >Donate</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div> -->
