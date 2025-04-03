@@ -1,0 +1,41 @@
+<div class="login-container">
+    <div class="login-form">
+        <div class="card-bg-image"></div>
+        <h2>Login</h2>
+        <form>
+            <label for="email">Enter your email</label>
+            <input type="email" id="email" placeholder="Email" required />
+            
+            <label for="password">Enter your password</label>
+            <input type="password" id="password" placeholder="Password" required />
+            
+            <a href="#" class="forgot-password">Forgot password?</a>
+            
+            <button type="submit">Log In</button>
+
+            <!-- Social Login Section -->
+            <div class="social-divider">
+                <span>OR</span>
+            </div>
+
+            <div class="social-login">
+                <a href="#" class="social-icon google">
+                    <i class="fab fa-google"></i>
+                    Continue with Google
+                </a>
+                <a href="#" class="social-icon microsoft">
+                    <i class="fab fa-microsoft"></i>
+                    Continue with Microsoft
+                </a>
+                <a href="#" class="social-icon slack">
+                    <i class="fab fa-slack"></i>
+                    Professional Login
+                </a>
+            </div>
+        </form>
+        <p>Don't have an account? <a routerLink="/signup">Register</a></p>
+    </div>
+</div>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">

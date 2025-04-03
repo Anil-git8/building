@@ -12,6 +12,9 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ClubComponent } from './club/club.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 
@@ -29,6 +32,9 @@ import { ClubComponent } from './club/club.component';
     ContactComponent,
     AboutComponent,
     ClubComponent,
+    LoginComponent,
+    SignupComponent,
+    GalleryComponent,
    
   
  
