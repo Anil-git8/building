@@ -11,6 +11,8 @@ import { AshrayaComponent } from './ashraya/ashraya.component';
 import { RequestComponent } from './request/request.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AboutComponent } from './about/about.component';
+
 
 
 const routes: Routes = [
@@ -25,6 +27,7 @@ const routes: Routes = [
   { path: 'request', component: RequestComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'about', component: AboutComponent },
  
 ];
 
