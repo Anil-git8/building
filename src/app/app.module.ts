@@ -14,9 +14,13 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ClubComponent } from './club/club.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+
 import { GalleryComponent } from './gallery/gallery.component';
 
 
+
+
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -34,9 +38,13 @@ import { GalleryComponent } from './gallery/gallery.component';
     ClubComponent,
     LoginComponent,
     SignupComponent,
+
     GalleryComponent,
    
   
+
+    AboutComponent,
+
  
   ],
   imports: [

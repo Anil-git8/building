@@ -9,14 +9,18 @@ import { AboutComponent } from './about/about.component';
 import { ClubComponent } from './club/club.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+
 import { GalleryComponent } from './gallery/gallery.component';
 
+
+import { AboutComponent } from './about/about.component';
 
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   { path: 'budiling', component: BudilingLinksComponent },
+
   { path:'aduit',component: AduitComponent},
   { path:'main-app',component:MainAppComponent},
   { path: 'Home', component:HomeComponent},
@@ -27,6 +31,20 @@ const routes: Routes = [
   { path: 'signup',component:SignupComponent},
   { path: 'gallery',component:GalleryComponent},
   
+
+
+  { path: 'aduit', component: AduitComponent },
+  { path: 'main-app', component: MainAppComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'folkstore', component: FOLKstoreComponent },
+  { path: 'ashraya', component: AshrayaComponent },
+  { path: 'request', component: RequestComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'about', component: AboutComponent },
+ 
+];
 
 
 ];

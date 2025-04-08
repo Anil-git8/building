@@ -1,9 +1,14 @@
+
 import { Component,HostListener} from '@angular/core';
 import { Router } from '@angular/router';
+
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-about',
   standalone: false,
+
   templateUrl:'./about.component.html',
   styleUrl: './about.component.css'
 })
@@ -50,4 +55,11 @@ export class AboutComponent {
       1000: { items: 1 }
     }
   };
+
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.css'
+})
+export class AboutComponent {
+
+
 }
