@@ -15,8 +15,13 @@ import { ClubComponent } from './club/club.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { GalleryComponent } from './gallery/gallery.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ResidencyComponent } from './residency/residency.component';
+import { StoreComponent } from './page/store/store.component';
+import { CartComponent } from './page/cart/cart.component';
+import { PaymentComponent } from './page/payment/payment.component';
+import { DonationComponent } from './donation/donation.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -35,14 +40,19 @@ import { GalleryComponent } from './gallery/gallery.component';
     LoginComponent,
     SignupComponent,
     GalleryComponent,
-   
-  
- 
+    ResidencyComponent,
+    StoreComponent,
+    CartComponent,
+    PaymentComponent,
+    DonationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CarouselModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
   
   ],
   providers: [],

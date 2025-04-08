@@ -1,0 +1,9 @@
+<div class="container mt-4">
+    <h3>Payment Page</h3>
+    <div *ngIf="product && product.name">
+      <h5>Product: {{ product.name }}</h5>
+      <p>{{ product.description }}</p>
+      <p class="fw-bold">Price: ₹{{ product.price }}</p>
+      <button class="btn btn-primary">Proceed to Pay</button>
+    </div>
+  </div>

@@ -2,16 +2,24 @@
     <div class="login-form">
         <div class="card-bg-image"></div>
         <h2>Login</h2>
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <label for="email">Enter your email</label>
-            <input type="email" id="email" placeholder="Email" required />
+            <input type="email" id="email" class="form-control" formControlName="email" placeholder="Email" required />
+            <div class="text-danger" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                Valid email required
+              </div>
             
             <label for="password">Enter your password</label>
-            <input type="password" id="password" placeholder="Password" required />
+            <input type="password" id="password" class="form-control" formControlName="password" placeholder="Password" required />
+            <div class="text-danger" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                Password is required
+              </div>
             
-            <a href="#" class="forgot-password">Forgot password?</a>
+              <!-- <div *ngIf="errorMessage" class="text-danger mb-3">{{ errorMessage }}</div> -->
+              <a href="#" class="forgot-password">Forgot password?</a>
+
             
-            <button type="submit">Log In</button>
+            <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Log in</button>
 
             <!-- Social Login Section -->
             <div class="social-divider">
@@ -39,3 +47,9 @@
 
 <!-- Add Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+
+
+

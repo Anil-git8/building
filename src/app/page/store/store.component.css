@@ -1,0 +1,19 @@
+.product-card {
+    display: flex;
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  .product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  .product-details {
+    margin-left: 20px;
+  }
+  button {
+    margin-right: 10px;
+  }
+  

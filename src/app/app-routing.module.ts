@@ -10,7 +10,11 @@ import { ClubComponent } from './club/club.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { GalleryComponent } from './gallery/gallery.component';
-
+import { ResidencyComponent } from './residency/residency.component';
+import { StoreComponent } from './page/store/store.component';
+import { CartComponent } from './page/cart/cart.component';
+import { PaymentComponent } from './page/payment/payment.component';
+import { DonationComponent } from './donation/donation.component';
 
 
 
@@ -26,6 +30,11 @@ const routes: Routes = [
   { path: 'login',component:LoginComponent},
   { path: 'signup',component:SignupComponent},
   { path: 'gallery',component:GalleryComponent},
+  { path: 'hostel',component:ResidencyComponent},
+  { path: 'store', component: StoreComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'payment', component: PaymentComponent },
+  { path: 'donation', component: DonationComponent },
   
 
 

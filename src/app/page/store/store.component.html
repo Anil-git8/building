@@ -1,0 +1,170 @@
+<!-- <h2>Store</h2>
+<div *ngFor="let product of products" class="product-card">
+  <img [src]="product.image" alt="Phone" class="product-image">
+  <div class="product-details">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>Price: ₹{{ product.price }}</p>
+    <button (click)="addToCart(product)">Add to Cart</button>
+    <button (click)="buyNow(product)">Buy Now</button>
+  </div>
+</div> -->
+<!-- <div class="cart-summary" *ngIf="cart.length > 0">
+  <h3>Cart Summary</h3>
+  <ul>
+    <li *ngFor="let item of cart">{{ item.name }} - ₹{{ item.price }}</li>
+  </ul>
+  <p>Total: ₹{{ totalPrice() }}</p>
+  <button (click)="checkout()">Checkout</button> -->
+  
+  <!-- 🛍️ Store Header 
+  <div class="container mt-3 mb-4">
+    <div class="d-flex justify-content-between align-items-center">
+    
+      <div>
+        <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+      </div>
+  
+      <!-- 🔍 Search Bar Center 
+      <div class="flex-grow-1 mx-4">
+        <input
+          type="text"
+          class="form-control me-2"
+          placeholder="Search products..."
+          [(ngModel)]="searchTerm"
+        />
+      </div>
+  
+      <!-- 🛒 Cart Icon with Red Dot 
+      <div class="position-relative me-3">
+        <i class="bi bi-cart-fill fs-4" style="cursor: pointer;" (click)="goToCart()"></i>
+        <span
+          *ngIf="cartHasItems"
+          class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"
+        ></span>
+      </div>
+  
+      <!-- 👤 Profile Icon 
+      <div>
+        <i class="bi bi-person-circle fs-4" style="cursor: pointer;" (click)="goToProfile()"></i>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 💳 Product Cards 
+  <div class="container mt-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">-->
+      <!-- 🔍 Show searched product first (leftmost) 
+      <ng-container *ngFor="let product of products">
+        <ng-container *ngIf="product.name.toLowerCase().includes(searchTerm.toLowerCase())">
+          <div class="col">
+            <div class="card h-100">
+              <img [src]="product.image" class="card-img-top" alt="product" />
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="fw-bold">₹{{ product.price }}</p>
+                <button class="btn btn-primary me-2" (click)="addToCart(product)">Add to Cart</button>
+                <button class="btn btn-success" (click)="buyNow(product)">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>-->
+  
+      <!-- 🧾 Show other (non-matching) products next 
+      <ng-container *ngFor="let product of products">
+        <ng-container *ngIf="!product.name.toLowerCase().includes(searchTerm.toLowerCase())">
+          <div class="col">
+            <div class="card h-100">
+              <img [src]="product.image" class="card-img-top" alt="product" />
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="fw-bold">₹{{ product.price }}</p>
+                <button class="btn btn-primary me-2" (click)="addToCart(product)">Add to Cart</button>
+                <button class="btn btn-success" (click)="buyNow(product)">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>-->
+  
+
+
+
+
+  <div class="container mt-3 mb-4">
+    <div class="d-flex justify-content-between align-items-center">
+      <!-- Logout Button -->
+      <div>
+        <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+      </div>
+  
+      <!-- Search Bar Center -->
+      <div class="flex-grow-1 mx-4">
+        <input
+          type="text"
+          class="form-control me-2"
+          placeholder="Search products..."
+          [(ngModel)]="searchTerm"
+        />
+      </div>
+  
+      <!-- Cart Icon with Red Dot -->
+      <div class="position-relative me-3">
+        <i class="bi bi-cart-fill fs-4" style="cursor: pointer;" (click)="goToCart()"></i>
+        <span *ngIf="cartHasItems" class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+      </div>
+  
+      <!-- Profile Icon -->
+      <div>
+        <i class="bi bi-person-circle fs-4" style="cursor: pointer;" (click)="goToProfile()"></i>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 🧾 Filtered Product (if searched) -->
+  <div class="container" *ngIf="searchTerm.trim()">
+    <div *ngFor="let product of products">
+      <div *ngIf="product.name.toLowerCase().includes(searchTerm.toLowerCase())">
+        <div class="card mb-4" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img [src]="product.image" class="img-fluid rounded-start" alt="product">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="fw-bold">₹{{ product.price }}</p>
+                <button class="btn btn-primary me-2" (click)="addToCart(product)">Add to Cart</button>
+                <button class="btn btn-success" (click)="buyNow(product)">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 🔁 Full Product Grid (only if no search) -->
+  <div class="container mt-4" *ngIf="!searchTerm.trim()">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let product of products">
+        <div class="card h-100">
+          <img [src]="product.image" class="card-img-top" alt="product">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="fw-bold">₹{{ product.price }}</p>
+            <button class="btn btn-primary me-2" (click)="addToCart(product)">Add to Cart</button>
+            <button class="btn btn-success" (click)="buyNow(product)">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
