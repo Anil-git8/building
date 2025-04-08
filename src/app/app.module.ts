@@ -9,15 +9,19 @@ import { FooterComponent } from './footer/footer.component';
 import { MainAppComponent } from './main-app/main-app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { FOLKstoreComponent } from './folkstore/folkstore.component';
-import { AshrayaComponent } from './ashraya/ashraya.component';
-import { RequestComponent } from './request/request.component';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ClubComponent } from './club/club.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+
+import { GalleryComponent } from './gallery/gallery.component';
+
+
+
+
 import { AboutComponent } from './about/about.component';
+
 
 
 @NgModule({
@@ -30,20 +34,24 @@ import { AboutComponent } from './about/about.component';
     MainAppComponent,
     HomeComponent,
     ContactComponent,
-    FOLKstoreComponent,
-    AshrayaComponent,
-    RequestComponent,
+    AboutComponent,
+    ClubComponent,
     LoginComponent,
     SignupComponent,
+
+    GalleryComponent,
+   
+  
+
     AboutComponent,
+
  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule
+    CarouselModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
