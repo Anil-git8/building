@@ -22,6 +22,9 @@ import { CartComponent } from './page/cart/cart.component';
 import { PaymentComponent } from './page/payment/payment.component';
 import { DonationComponent } from './donation/donation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OwnerLoginComponent } from './page/owner-login/owner-login.component';
+import { OwnerDashboardComponent } from './page/owner-dashboard/owner-dashboard.component';
+import { InventoryComponent } from './page/inventory/inventory.component';
 
 
 
@@ -45,6 +48,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CartComponent,
     PaymentComponent,
     DonationComponent,
+    OwnerLoginComponent,
+    OwnerDashboardComponent,
+    InventoryComponent,
   ],
   imports: [
     BrowserModule,

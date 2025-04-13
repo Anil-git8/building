@@ -1,0 +1,10 @@
+<div class="container mt-5">
+    <h3>🛠️ Store Owner Login</h3>
+    <form (ngSubmit)="login()">
+      <input type="text" class="form-control mb-3" placeholder="Username" [(ngModel)]="username" name="username" required />
+      <input type="password" class="form-control mb-3" placeholder="Password" [(ngModel)]="password" name="password" required />
+      <button class="btn btn-primary w-100">Login</button>
+    </form>
+    <p *ngIf="loginFailed" class="text-danger mt-2">Invalid credentials</p>
+  </div>
+  

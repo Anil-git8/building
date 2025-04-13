@@ -3,8 +3,10 @@
     <!-- 🏬 Store Icon at top right -->
     <div class="d-flex justify-content-between align-items-center mb-3">
       <h2 class="mb-0">🛒 Your Cart</h2>
-      <div>
-        <i class="bi bi-shop fs-3" style="cursor: pointer;" routerLink="/store" title="Back to Store"></i>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-outline-secondary me-2" routerLink="/store">
+          <i class="bi bi-shop"></i> Back to Store
+        </button>
       </div>
     </div>
   
@@ -21,8 +23,15 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ item.name }}</h5>
                   <p class="card-text">₹{{ item.price }}</p>
+
+                  <!-- <div class="d-flex gap-2 align-items-center">
+                    <button class="btn btn-outline-secondary btn-sm" (click)="updateQuantity(i, -1)">-</button>
+                    <span>{{ item.quantity }}</span>
+                    <button class="btn btn-outline-secondary btn-sm" (click)="updateQuantity(i, 1)">+</button>
+                  </div> -->
+
                   <button class="btn btn-danger btn-sm mt-2" (click)="removeFromCart(i)">
-                    Remove
+                    <i class="bi bi-trash"></i> Remove
                   </button>
                 </div>
               </div>

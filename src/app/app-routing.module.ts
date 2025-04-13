@@ -15,6 +15,10 @@ import { StoreComponent } from './page/store/store.component';
 import { CartComponent } from './page/cart/cart.component';
 import { PaymentComponent } from './page/payment/payment.component';
 import { DonationComponent } from './donation/donation.component';
+import { OwnerLoginComponent } from './page/owner-login/owner-login.component';
+import { OwnerDashboardComponent } from './page/owner-dashboard/owner-dashboard.component';
+import { OwnerAuthGuard } from './guards/owner-auth.guard';
+import { InventoryComponent } from './page/inventory/inventory.component';
 
 
 
@@ -35,7 +39,20 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'donation', component: DonationComponent },
-  
+  { path: 'owner-login', component: OwnerLoginComponent },
+  {
+    path: 'owner-dashboard',
+    component: OwnerDashboardComponent,
+    canActivate: [OwnerAuthGuard]
+  },
+  // { path: 'owner-dashboard', component: OwnerDashboardComponent },
+  { path: 'inventory', component: InventoryComponent },
+ 
+
+
+
+
+
 
 
 ];

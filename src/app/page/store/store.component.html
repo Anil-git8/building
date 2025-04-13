@@ -112,6 +112,14 @@
           [(ngModel)]="searchTerm"
         />
       </div>
+
+
+      <!-- <div class="me-2">
+        <select class="form-select" [(ngModel)]="selectedCategory">
+          <option value="">All Categories</option>
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+      </div> -->
   
       <!-- Cart Icon with Red Dot -->
       <div class="position-relative me-3">
@@ -120,16 +128,79 @@
       </div>
   
       <!-- Profile Icon -->
-      <div>
-        <i class="bi bi-person-circle fs-4" style="cursor: pointer;" (click)="goToProfile()"></i>
-      </div>
+      <!-- Store Owner Icon -->
+<div>
+  <i class="bi bi-gear-fill fs-4" style="cursor: pointer;" (click)="goToOwnerLogin()" title="Store Owner Login"></i>
+</div>
+
     </div>
   </div>
+
+  <div class="category-scroll mb-3 d-flex justify-content-center align-items-center">
+    <div class="btn-group" role="group" aria-label="Category filter">
+  <!-- <div class="btn-group me-2" role="group" aria-label="Category filter"> -->
+    <button
+      type="button"
+      class="btn"
+      [ngClass]="{
+        'btn-primary': selectedCategory === '',
+        'btn-outline-primary': selectedCategory !== ''
+      }"
+      (click)="selectCategory('')"
+    >
+      All
+    </button>
+    <button
+      *ngFor="let category of categories"
+      type="button"
+      class="btn"
+      [ngClass]="{
+        'btn-primary': selectedCategory === category,
+        'btn-outline-primary': selectedCategory !== category
+      }"
+      (click)="selectCategory(category)"
+    >
+      {{ category }}
+    </button>
+  </div>
+  </div>
+
   
+  <!-- Full Product Grid (only if no search) -->
+  <div class="container mt-4" *ngIf="filteredProducts().length > 0">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let product of filteredProducts()">
+        <div>
+          <!-- *ngIf="product.name.toLowerCase().includes(searchTerm.toLowerCase())" -->
+        <div class="card h-100">
+          <img [src]="product.image" class="card-img-top" alt="product">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="fw-bold">₹{{ product.price }}</p>
+            <p *ngIf="product.quantity < 10" class="text-danger fw-bold">Limited Stock!</p>
+            <button class="btn btn-primary me-2" (click)="addToCart(product)">Add to Cart</button>
+            <button class="btn btn-success" (click)="buyNow(product)">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+
+
+  <div class="text-center text-muted mt-4" *ngIf="filteredProducts().length === 0">
+    No products found for your search or category.
+  </div>
+
+
+
+
+
   <!-- 🧾 Filtered Product (if searched) -->
-  <div class="container" *ngIf="searchTerm.trim()">
-    <div *ngFor="let product of products">
+  <!-- <div class="container mt-4" *ngIf="filteredProducts().length > 0">
+    <div *ngFor="let product of filteredProducts()">
       <div *ngIf="product.name.toLowerCase().includes(searchTerm.toLowerCase())">
+
         <div class="card mb-4" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
@@ -140,7 +211,8 @@
                 <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">{{ product.description }}</p>
                 <p class="fw-bold">₹{{ product.price }}</p>
-                <button class="btn btn-primary me-2" (click)="addToCart(product)">Add to Cart</button>
+                <!-- <p *ngIf="product.quantity < 10" class="text-danger fw-bold">Limited Stock!</p> -->
+                <!--<button class="btn btn-primary me-2" (click)="addToCart(product)">Add to Cart</button>
                 <button class="btn btn-success" (click)="buyNow(product)">Buy Now</button>
               </div>
             </div>
@@ -148,23 +220,4 @@
         </div>
       </div>
     </div>
-  </div>
-  
-  <!-- 🔁 Full Product Grid (only if no search) -->
-  <div class="container mt-4" *ngIf="!searchTerm.trim()">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col" *ngFor="let product of products">
-        <div class="card h-100">
-          <img [src]="product.image" class="card-img-top" alt="product">
-          <div class="card-body">
-            <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{ product.description }}</p>
-            <p class="fw-bold">₹{{ product.price }}</p>
-            <button class="btn btn-primary me-2" (click)="addToCart(product)">Add to Cart</button>
-            <button class="btn btn-success" (click)="buyNow(product)">Buy Now</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+  </div> -->

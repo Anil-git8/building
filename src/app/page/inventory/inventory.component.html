@@ -1,0 +1,95 @@
+<div class="container mt-4">
+    <h3>📦 Product Inventory</h3>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <button class="btn btn-danger" (click)="logout()">Logout</button>
+
+      <div class="flex-grow-1 mx-4">
+        <input
+          type="text"
+          class="form-control me-2 border border-secondary"
+          placeholder="Search products..."
+          aria-label="Search"
+          aria-describedby="search-addon"
+          [(ngModel)]="searchTerm"
+        />
+      </div>
+
+
+    <button class="btn btn-success me-2" routerLink="/owner-dashboard">
+      <i class="bi bi-plus-circle me-2"></i>Add products 
+    </button>
+  </div>
+  <div class="table-responsive" style="overflow-x: auto;">
+    <table class="table table-bordered mt-3">
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Category</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of filteredProducts(); let i = index">
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>₹{{ product.price }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>{{ product.category }}</td>
+          <td><img [src]="product.image" alt="img" style="height: 50px;"></td>
+          <td>
+            <button class="btn btn-warning btn-sm me-2" (click)="openEditModal(i)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="removeProduct(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  
+  <!-- Edit Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" (ngSubmit)="saveEdit()">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" [(ngModel)]="editableProduct.name" name="name" class="form-control mb-2" placeholder="Name" required />
+          <textarea [(ngModel)]="editableProduct.description" name="desc" class="form-control mb-2" placeholder="Description" required></textarea>
+          
+          <input type="number" [(ngModel)]="editableProduct.price" name="price" class="form-control mb-2" placeholder="Price" required />
+          
+          <input type="number" [(ngModel)]="editableProduct.quantity" name="quantity" class="form-control mb-2" placeholder="Quantity" required />
+          <select [(ngModel)]="editableProduct.category" name="category" class="form-select mb-2" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="Puja Items">Puja Items</option>
+            <option value="Books">Books</option>
+            <option value="Decor">Decor</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Prasadam">Prasadam</option>
+          </select>
+
+          <div class="mb-3">
+            <label>Image</label>
+            <input type="file" class="form-control" (change)="onEditImageSelected($event)">
+            <div *ngIf="editableProduct.image" class="mt-2">
+              <img [src]="editableProduct.image" alt="Preview" class="img-thumbnail" style="max-height: 100px;">
+            </div>
+          </div>
+        </div>
+
+        
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

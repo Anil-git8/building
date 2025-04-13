@@ -153,3 +153,61 @@
     transform: translateY(-50%) rotate(180deg); /* Flips when hovered */
 }
 
+@media (max-width: 991.98px) {
+  .navbar-wrapper {
+    margin-top: 0;
+    padding: 10px 20px;
+    height: auto;
+
+  }
+  .navbar-nav .dropdown-toggle::after {
+    display: none; /* Hide the default Bootstrap arrow */
+}
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+    box-shadow: none;
+    margin-top: 0;
+    background-color: #2a2aff;
+  }
+
+
+  .navbar-toggler {
+    border: none;
+    position:absolute;
+    right: 20px;
+    top:5px;
+    }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .main {
+    width: 40px;
+    height: 40px;
+  }
+}

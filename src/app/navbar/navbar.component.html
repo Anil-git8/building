@@ -8,10 +8,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 40px;">
+      <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 40px;" #navbarCollapse>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/about">About&nbsp;Us</a>
+            <a class="nav-link" routerLink="/about" (click)="closeNavbar(navbarCollapse)">About&nbsp;Us</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
