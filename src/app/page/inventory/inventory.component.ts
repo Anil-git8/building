@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/product.service';
+import { Router } from '@angular/router';
 
 declare var bootstrap: any;
 
@@ -13,10 +14,12 @@ export class InventoryComponent {
   products: any[] = [];
   editableProduct: any = {};
   editIndex = -1;
-  router: any;
+  // router: any;
   searchTerm: string = '';
 
-  constructor(private productService: ProductService) {
+  // constructor(private router: Router) {}
+  
+  constructor(private productService: ProductService, private router: Router) {
     this.products = this.productService.getProducts();
   }
 
@@ -51,8 +54,12 @@ export class InventoryComponent {
   }
 
   logout() {
-    localStorage.removeItem('isOwnerLoggedIn');
-    this.router.navigate(['/store']);
+    const confirmed = window.confirm('Are you sure you want to logout?');
+    if (confirmed) {
+      localStorage.removeItem('isOwnerLoggedIn');
+      this.router.navigate(['/store']);
+    }
+
   }
 
   filteredProducts() {
