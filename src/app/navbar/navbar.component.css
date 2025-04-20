@@ -46,13 +46,13 @@
 /* Dropdown styling */
 .navbar-nav .dropdown-menu {
     background-color: #2a2aff;
-    color: white;
+    color: black;
     border-radius: 8px;
     padding: 10px;
 }
 
 .navbar-nav .dropdown-item {
-    color: white;
+    color: black;
 }
 
 .navbar-nav .dropdown-item:hover {
@@ -68,7 +68,7 @@
 }
 /* Default navbar link color (white) */
 .navbar-nav .nav-link {
-    color: white !important;
+    color: black !important;
 }
 
 /* Change navbar link color when scrolled */
@@ -81,10 +81,6 @@
     background-color: #2a2aff;
     border-radius: 8px;
     padding: 10px;
-}
-
-.navbar-nav .dropdown-item {
-    color: #fff !important;
 }
 
 .navbar-nav .dropdown-item:hover {
