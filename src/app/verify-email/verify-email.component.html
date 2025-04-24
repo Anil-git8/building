@@ -1,0 +1,9 @@
+<div class="verify-container" @fadeIn>
+    <h2>Email Verification</h2>
+    <p *ngIf="userEmail">Verification link was sent to <strong>{{ userEmail }}</strong>.</p>
+    <p>Please verify your email address to continue.</p>
+  
+    <button (click)="resendEmail()">Resend Verification Email</button>
+    <button class="login-btn" (click)="goToLogin()">Back to Login</button>
+  </div>
+  

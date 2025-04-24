@@ -1,56 +1,57 @@
 <div class="login-container">
     <div class="login-form">
-        <h2>Create Account</h2>
-        <form>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" placeholder="Krishna" required />
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" placeholder="Balaram" required />
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="mobile">Mobile</label>
-                    <input type="tel" id="mobile" placeholder="+1 234 567 890" required />
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="krishna@example.com" required />
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="••••••••" required />
-                </div>
-                <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" placeholder="••••••••" required />
-                </div>
-            </div>
-
-            <div class="form-group full-width">
-                <label for="role">Select Role</label>
-                <div class="custom-select">
-                    <select id="role" required>
-                        <option value="">Select</option>
-                        <option value="admin">Admin</option>
-                        <option value="user">Super Admin</option>
-                        <option value="admin">Folk Guide</option>
-                        <option value="admin">Folk</option>
-                        <option value="admin">Customer</option>
-                    </select>
-                </div>
-            </div>
-
-            <button type="submit">Sign Up</button>
-        </form>
-        <p>Already have an account? <a routerLink="/login">Login</a></p>
+      <h2>Create Account</h2>
+      <form (ngSubmit)="signup()" #signupForm="ngForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" placeholder="Krishna" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" placeholder="Balaram" required />
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobile">Mobile</label>
+            <input type="tel" id="mobile" name="mobile" [(ngModel)]="mobile" placeholder="+1 234 567 890" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="krishna@example.com" required />
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="••••••••" required />
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="••••••••" required />
+          </div>
+        </div>
+  
+        <div class="form-group full-width">
+          <label for="role">Select Role</label>
+          <div class="custom-select">
+            <select id="role" name="role" [(ngModel)]="role" required>
+              <option value="">Select</option>
+              <option value="admin">Admin</option>
+              <option value="superadmin">Super Admin</option>
+              <option value="folkguide">Folk Guide</option>
+              <option value="folk">Folk</option>
+              <option value="customer">Customer</option>
+            </select>
+          </div>
+        </div>
+  
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a routerLink="/login">Login</a></p>
     </div>
-</div>
+  </div>
+  

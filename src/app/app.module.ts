@@ -25,6 +25,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OwnerLoginComponent } from './page/owner-login/owner-login.component';
 import { OwnerDashboardComponent } from './page/owner-dashboard/owner-dashboard.component';
 import { InventoryComponent } from './page/inventory/inventory.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from '../environments/environment';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+
 
 
 
@@ -51,6 +60,7 @@ import { InventoryComponent } from './page/inventory/inventory.component';
     OwnerLoginComponent,
     OwnerDashboardComponent,
     InventoryComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,9 +69,15 @@ import { InventoryComponent } from './page/inventory/inventory.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-  
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    VerifyEmailComponent,
   ],
-  providers: [],
+  providers: [
+    provideFirebaseApp(() => initializeApp({ projectId: "aurth-folk", appId: "1:241476533313:web:bbb073783104315f5fdac0", storageBucket: "aurth-folk.firebasestorage.app", apiKey: "AIzaSyAK4QVrH3_9O-a42YuVU3jYQnbg9UKU1SI", authDomain: "aurth-folk.firebaseapp.com", messagingSenderId: "241476533313" })),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

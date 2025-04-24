@@ -2,43 +2,57 @@
     <div class="login-form">
         <div class="card-bg-image"></div>
         <h2>Login</h2>
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"> -->
+            <form>
             <label for="email">Enter your email</label>
-            <input type="email" id="email" class="form-control" formControlName="email" placeholder="Email" required />
-            <div class="text-danger" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+            <input 
+    type="email" 
+    id="email" 
+    name="email" 
+    class="form-control" 
+    placeholder="Email" 
+    [(ngModel)]="email" />
+            <!-- <div class="text-danger" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
                 Valid email required
-              </div>
+              </div> -->
             
             <label for="password">Enter your password</label>
-            <input type="password" id="password" class="form-control" formControlName="password" placeholder="Password" required />
-            <div class="text-danger" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            class="form-control" 
+            placeholder="Password" 
+            [(ngModel)]="password" />
+            <!-- <div class="text-danger" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
                 Password is required
-              </div>
+              </div> -->
             
               <!-- <div *ngIf="errorMessage" class="text-danger mb-3">{{ errorMessage }}</div> -->
-              <a href="#" class="forgot-password">Forgot password?</a>
+              <!-- <a href="#" class="forgot-password">Forgot password?</a> -->
 
             
-            <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Log in</button>
-
+            <button type="submit" class="btn btn-primary w-100" (click)="login()">Log in</button>
+            <!-- [disabled]="loginForm.invalid" -->
+            <a href="#" class="forgot-password" routerLink="/forgotpassword">Forgot password?</a>
             <!-- Social Login Section -->
             <div class="social-divider">
                 <span>OR</span>
             </div>
 
             <div class="social-login">
-                <a href="#" class="social-icon google">
-                    <i class="fab fa-google"></i>
-                    Continue with Google
-                </a>
-                <a href="#" class="social-icon microsoft">
+                <a href="#" class="social-icon google" (click)="signInWithGoogle($event)">
+                    <i class="fab fa-google"></i> Continue with Google
+                  </a>
+                  
+                <!-- <a href="#" class="social-icon microsoft">
                     <i class="fab fa-microsoft"></i>
                     Continue with Microsoft
                 </a>
                 <a href="#" class="social-icon slack">
                     <i class="fab fa-slack"></i>
                     Professional Login
-                </a>
+                </a> -->
             </div>
         </form>
         <p>Don't have an account? <a routerLink="/signup">Register</a></p>

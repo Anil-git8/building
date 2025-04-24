@@ -19,6 +19,12 @@ import { OwnerLoginComponent } from './page/owner-login/owner-login.component';
 import { OwnerDashboardComponent } from './page/owner-dashboard/owner-dashboard.component';
 import { OwnerAuthGuard } from './guards/owner-auth.guard';
 import { InventoryComponent } from './page/inventory/inventory.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+
+
+
+
 
 
 
@@ -47,6 +53,8 @@ const routes: Routes = [
   },
   // { path: 'owner-dashboard', component: OwnerDashboardComponent },
   { path: 'inventory', component: InventoryComponent },
+  { path: 'forgotpassword', component: ForgotPasswordComponent },
+  { path: 'verify-mail', component: VerifyEmailComponent },
  
 
 
